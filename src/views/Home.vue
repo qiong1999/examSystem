@@ -1,7 +1,7 @@
 <template>
     <Header/>
     <Tab />
-    <Btn />
+    <Btn content="批量导入"/>
 </template>
 
 <script>

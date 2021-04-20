@@ -21,7 +21,7 @@ export default {
     width:100vw;
     height:53px;
     background-color:#fff;
-    box-shadow:2px 2px 2px rgb(241, 241, 241);
+    box-shadow:2px 2px 2px rgb(247, 246, 246);
     & ul{
         list-style:none;
         text-align:center;
