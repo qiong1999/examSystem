@@ -1,9 +1,12 @@
 <template>
     <div class="tab">
-        <div v-for="item in list" :key="item">
-            <span v-for="itt in item" :key="itt">
-                {{itt}}
-            </span>
+        <div class="table-group">
+            <div class="table-header" v-for="titler in Object.keys(list[0])" :key="titler">
+                {{titler}}
+            <ul class="table-row" v-for="item in list" :key="item">
+                <li>{{item[titler]}}</li>
+            </ul>
+            </div>
         </div>
     </div>
 </template>
@@ -13,8 +16,8 @@ export default {
   name: 'tab',
   setup () {
     const list = [
-      { stuId: '1714010302', username: '梁薪驰', password: '123456', photo: 'null', root: true },
-      { stuId: '1714010812', username: '驰子', password: '123456', photo: 'null', root: true }
+      { stuId: '1714010812', username: '驰子', password: '123456', photo: 'null', root: true, username1: '驰子', password1: '123456', photo1: 'null', root1: true, content: '123' },
+      { stuId: '1714010812', username: '欧阳驰子', password: '123456', photo: 'null', root: true, username1: '驰子', password1: '123456', photo1: 'null', root1: true, content: '12345' }
     ]
     return { list }
   }
@@ -22,16 +25,26 @@ export default {
 </script>
 
 <style scoped lang="scss">
+ul {
+    list-style:none;
+}
 .tab{
-    display:inline-block;
-    & div{
-        height:47px;
-        line-height:47px;
-        border-bottom:1px solid rgb(230, 230, 230);
-        & span{
-            padding:0 20px;
-            background:red;
-            border:1px solid #fff;
+    display:table;
+    white-space:nowrap;
+    background:red;
+    overflow:scroll;
+    & .table-header{
+        display:inline-block;
+        padding:10px 0;
+        text-align:center;
+        & .table-row{
+            display:block;
+            padding:7px 17px;
+            border-bottom:1px solid rgb(16, 121, 241);
+        }
+         & .table-row:nth-child(1){
+             margin-top:7px;
+            border-top:1px solid rgb(16, 121, 241);
         }
     }
 }
