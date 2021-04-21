@@ -1,7 +1,8 @@
 <template>
     <Header/>
-    <Tab  list = "list" />
+    <search />
     <Btn content="批量导入"/>
+    <Tab  :list = "list" />
 </template>
 
 <script>
@@ -9,12 +10,14 @@
 import Header from '../components/header.vue'
 import Btn from '../components/btn.vue'
 import Tab from '../components/tab.vue'
+import Search from '../components/search.vue'
 export default {
   name: 'home',
   components: {
     Header,
     Btn,
-    Tab
+    Tab,
+    Search
   },
   setup () {
     const list = [

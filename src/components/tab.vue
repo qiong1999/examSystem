@@ -14,12 +14,9 @@
 <script>
 export default {
   name: 'tab',
+  props: ['list'],
   setup () {
-    const list = [
-      { stuId: '1714010812', username: '驰子', password: '123456', photo: 'null', root: true, username1: '驰子', password1: '123456', photo1: 'null', root1: true, content: '123' },
-      { stuId: '1714010812', username: '欧阳驰子', password: '123456', photo: 'null', root: true, username1: '驰子', password1: '123456', photo1: 'null', root1: true, content: '12345' }
-    ]
-    return { list }
+    return { }
   }
 }
 </script>
@@ -31,7 +28,7 @@ ul {
 .tab{
     display:table;
     white-space:nowrap;
-    background:red;
+    user-select:none;
     overflow:scroll;
     & .table-header{
         display:inline-block;
